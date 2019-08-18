@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+.dbt {
+	font-size: 36px;
+}
+.xbt {
+	font-size: 24px;
+}
+</style>
+</head>
+
+<body>
+<p align="left" class="dbt">Shadowsocks 的部署</p>
+<p align="left" class="xbt">#服务器系统Liunx CentOS，需要Python 和pip</p>
+<p>-----------------</p>
+<p>pip install shadowsocks #安装</p>
+<p>pip install shadowsocks #安装<br />
+  ssserver #查看命令行<br />
+vim /etc/config.json #新建一个config文件 </p>
+<p>------------------</p>
+<p class="xbt">#config.json的注释</p>
+<p>{<br />
+  &quot;server&quot;:&quot;0.0.0.0&quot;, #服务的IP地址（0.0.0.0即为绑定所有IP，一般不需要改）<br />
+  &quot;server_port&quot;:****, #服务端口<br />
+  &quot;local_address&quot;:&quot;127.0.0.1&quot;, #本地地址（不用改）<br />
+  &quot;password&quot;:&quot;******&quot;, #密码 <br />
+  &quot;timeout&quot;:300, #链接超时/s<br />
+  &quot;method&quot;:&quot;aes-256-cfb&quot;, #加密方式<br />
+  &quot;fast_open&quot;:false, #false为关，true为开<br />
+  &quot;workers&quot;:1 #进程数<br />
+  }</p>
+<p class="xbt">#服务启动</p>
+<p>------------------<br />
+ssserver -c /etc/config.json -d start #从config.json载入信息并开始服务，start改为stop停止。</p>
+<p>------------------<span class="xbt"><br />
+  <strong>我的模板:</span></p>
+<p>{<br />
+  &quot;server&quot;:&quot;0.0.0.0&quot;,<br />
+  &quot;server_port&quot;:8388,<br />
+  &quot;local_address&quot;:&quot;127.0.0.1&quot;,<br />
+  &quot;password&quot;:&quot;l123456/&quot;, <br />
+  &quot;timeout&quot;:300,<br />
+  &quot;method&quot;:&quot;aes-256-cfb&quot;,<br />
+  &quot;fast_open&quot;:false,<br />
+  &quot;workers&quot;:1<br />
+  }<br />
+  ------------------<br />
+<span class="xbt">启动模板</span></p>
+<p>ssserver -c /etc/ss.json -d start</p>
+<p>------------------<br />
+  快速启动：<br />
+  ssserver -p 8388 -k l123456/ -m aes-256-cfb</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HTML</title>
+<style type="text/css">
+.dbt {
+	font-size: 36px;
+}
+</style>
+</head>
+
+<body>
+<p align="center" class="dbt">Apache httpd 使用事项</p>
+<p>CentOS 7<br />
+  Apache httpd</p>
+<p>yum httpd #安装</p>
+<p>html 文件默认在 /var/www/html 下</p>
+<p>配置文件：/etc/httpd/conf/httpd.conf</p>
+<p>需要在配置文件中  ServerName www.example.com:  下面加  ServerName localhost</p>
+<p>默认主页是 index.html 如果需要用其他主页，<br />
+  需要修改配置文件中<br />
+  &lt;IfModule dir_module&gt;<br />
+  DirectoryIndex index.html<br />
+  &lt;/IfModule&gt;<br />
+  ---------------<br />
+  &lt;IfModule dir_module&gt;<br />
+  DirectoryIndex xxxx.html xxxx.html  (改为你要的名字或增加一个文件）<br />
+  &lt;/IfModule&gt;</p>
+</body>
+</html>

@@ -3,27 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<style type="text/css">
-.dbt {
-	font-size: 36px;
-}
-.xbt {
-	font-size: 24px;
-}
-</style>
+<link rel="stylesheet" href="css/mycss.css">
 </head>
 
 <body>
-<p align="left" class="dbt">Shadowsocks 的部署</p>
+<p align="center" class="dbt">Shadowsocks 的部署</p>
 <p align="left" class="xbt">#服务器系统Liunx CentOS，需要Python 和pip</p>
 <p>-----------------</p>
-<p>pip install shadowsocks #安装</p>
-<p>pip install shadowsocks #安装<br />
+<p class="zw">pip install shadowsocks #安装</p>
+<p class="zw">pip install shadowsocks #安装<br />
   ssserver #查看命令行<br />
-vim /etc/config.json #新建一个config文件 </p>
+vim /etc/config.json #新建一个config文件</p>
 <p>------------------</p>
 <p class="xbt">#config.json的注释</p>
-<p>{<br />
+<p class="zw">{<br />
   &quot;server&quot;:&quot;0.0.0.0&quot;, #服务的IP地址（0.0.0.0即为绑定所有IP，一般不需要改）<br />
   &quot;server_port&quot;:****, #服务端口<br />
   &quot;local_address&quot;:&quot;127.0.0.1&quot;, #本地地址（不用改）<br />
@@ -35,10 +28,10 @@ vim /etc/config.json #新建一个config文件 </p>
   }</p>
 <p class="xbt">#服务启动</p>
 <p>------------------<br />
-ssserver -c /etc/config.json -d start #从config.json载入信息并开始服务，start改为stop停止。</p>
+<span class="zw">ssserver -c /etc/config.json -d start #从config.json载入信息并开始服务，start改为stop停止。</span></p>
 <p>------------------<span class="xbt"><br />
   <strong>我的模板:</span></p>
-<p>{<br />
+<p><span class="zw">{<br />
   &quot;server&quot;:&quot;0.0.0.0&quot;,<br />
   &quot;server_port&quot;:8388,<br />
   &quot;local_address&quot;:&quot;127.0.0.1&quot;,<br />
@@ -47,10 +40,10 @@ ssserver -c /etc/config.json -d start #从config.json载入信息并开始服务
   &quot;method&quot;:&quot;aes-256-cfb&quot;,<br />
   &quot;fast_open&quot;:false,<br />
   &quot;workers&quot;:1<br />
-  }<br />
+  }</span><br />
   ------------------<br />
 <span class="xbt">启动模板</span></p>
-<p>ssserver -c /etc/ss.json -d start</p>
+<p class="zw">ssserver -c /etc/ss.json -d start</p>
 <p>------------------<br />
   快速启动：<br />
   ssserver -p 8388 -k l123456/ -m aes-256-cfb</p>

@@ -5,20 +5,23 @@
 <title>HTML</title>
 <style type="text/css">
 .dbt {
-	font-size: 36px;
+	font-size: 42px;
+}
+.zw {
+	font-size: 24px;
 }
 </style>
 </head>
 
 <body>
 <p align="center" class="dbt">Apache httpd 使用事项</p>
-<p>CentOS 7<br />
+<p class="zw">CentOS 7<br />
   Apache httpd</p>
-<p>yum httpd #安装</p>
-<p>html 文件默认在 /var/www/html 下</p>
-<p>配置文件：/etc/httpd/conf/httpd.conf</p>
-<p>需要在配置文件中  ServerName www.example.com:  下面加  ServerName localhost</p>
-<p>默认主页是 index.html 如果需要用其他主页，<br />
+<p class="zw">yum httpd #安装</p>
+<p class="zw">html 文件默认在 /var/www/html 下</p>
+<p class="zw">配置文件：/etc/httpd/conf/httpd.conf</p>
+<p class="zw">需要在配置文件中  ServerName www.example.com:  下面加  ServerName localhost</p>
+<p class="zw">默认主页是 index.html 如果需要用其他主页，<br />
   需要修改配置文件中<br />
   &lt;IfModule dir_module&gt;<br />
   DirectoryIndex index.html<br />

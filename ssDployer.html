@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>自动部署SS的shell脚本</title>
+<link rel="stylesheet" href="css/mycss.css">
+</head>
+
+<body>
+<p align="center" class="dbt">自动部署SS的shell脚本</p>
+<p><span class="zw">pip install shadowsocks<br />
+  cd /etc<br />
+  echo &quot;{&quot; &gt; ss.json<br />
+  echo '&quot;server&quot;:&quot;0.0.0.0&quot;, ' &gt;&gt; ss.json<br />
+  echo '&quot;server_port&quot;:8388,' &gt;&gt; ss.json<br />
+  echo '&quot;local_address&quot;:&quot;127.0.0.1&quot;,' &gt;&gt; ss.json<br />
+  echo '&quot;password&quot;:&quot;l123456/&quot;,' &gt;&gt; ss.json<br />
+  echo '&quot;timeout&quot;:300,' &gt;&gt; ss.json<br />
+  echo '&quot;method&quot;:&quot;aes-256-cfb&quot;,' &gt;&gt; ss.json<br />
+  echo '&quot;fast_open&quot;:false,' &gt;&gt; ss.json<br />
+  echo '&quot;workers&quot;:1' &gt;&gt; ss.json<br />
+  echo &quot;}&quot; &gt;&gt; ss.json<br />
+  ssserver -c /etc/ss.json -d start</span><br />
+</p>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MariaBD的使用</title>
+<link rel="stylesheet" href="css/mycss.css">
+</head>
+
+<body>
+<p class="zw">CREATE USER，DROP USER 和 RENAME USER。三条语句分别用来创建、删除和重命名 MariaDB 账户。<br />
+  GRANT。为指定 MariaDB 账户分配权限。<br />
+  REVOKE。撤销指定 MariaDB 账户的权限。<br />
+  SET PASSWORD。为给定MariaDB 账户设置口令。<br />
+  SHOW GRANT。显示指定 MariaDB账户当前拥有的全部权限。</p>
+<p class="zw">CREATE USER account [IDENTIFIED BY ‘password’];</p>
+<p class="zw">MariaDB [(none)]&gt; CREATE USER 'ownCloud'@'%' IDENTIFIED BY 'l123456/'<br />
+  创建了一个名为 yangfan 的用户密码为l123456/，并允许其可从任意一台主机来连接服务器。</p>
+<p class="zw">DROP USER account  删除一个帐户及与之相关的全部权限但不删除数据</p>
+<p class="zw">RENAME USER from_account TO to_account  改变给定账户的名称</p>
+<p class="zw">对账户授权需要使用GRANT语句<br />
+  GRANT privileges (columns) ON what To account [IDENTIFIED BY ‘password’][REQUIRE encryption requirements] [WITH grant or resource management options];<br />
+  privileges，授权账户的权限。<br />
+  columns，权限将作用的数据列。如若需要列举多个数据列，则用逗号分隔。<br />
+  what，权限的级别。<br />
+  account，被授权的账户。account 的格式为 ‘user_name’@’host_name’。<br />
+  password，账户的口令。类似于 CREATE USER 中的 IDENTIED BY。</p>
+<p class="zw">撤销用户授权用 REVOKE 语句，下面是 REVOKE 语句的语法：</p>
+<p class="zw">REVOKE preivileges [ columns ] ON what FROM account</p>
+</body>
+</html>

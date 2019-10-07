@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Liunx复制文件</title>
+<link rel="stylesheet" href="css/mycss.css">
+</head>
+
+<body>
+<p align="center" class="dbt">Liunx复制文件</p>
+<p align="left" class="xbt">copy的简单说明：</p>
+<p class="zw">copy命令的功能是将给出的文件或目录拷贝到另一文件或目录中，同MSDOS下的copy命令一样，功能十分强大。<br />
+  语法： cp [选项] 源文件或目录 目标文件或目录<br />
+  说明：该命令把指定的源文件复制到目标文件或把多个源文件复制到目标目录中。<br />
+  该命令的各选项含义如下：<br />
+  - a 该选项通常在拷贝目录时使用。它保留链接、文件属性，并递归地拷贝目录，其作用等于dpR选项的组合。<br />
+  - d 拷贝时保留链接。<br />
+  - f 删除已经存在的目标文件而不提示。<br />
+  - i 和f选项相反，在覆盖目标文件之前将给出提示要求用户确认。回答y时目标文件将被覆盖，是交互式拷贝。<br />
+  - p 此时cp除复制源文件的内容外，还将把其修改时间和访问权限也复制到新文件中。<br />
+  - r 若给出的源文件是一目录文件，此时cp将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名。<br />
+  - l 不作拷贝，只是链接文件。</p>
+<p class="xbt">几种用法</p>
+<p><br />
+  <span class="zw">linux复制指定目录下的全部文件到另一个目录中<br />
+  复制指定目录下的全部文件到另一个目录中<br />
+  文件及目录的复制是经常要用到的。linux下进行复制的命令为cp。<br />
+  假设复制源目录 为 dir1 ,目标目录为dir2。怎样才能将dir1下所有文件复制到dir2下了<br />
+  如果dir2目录不存在，则可以直接使用<br />
+  cp -r dir1 dir2<br />
+即可。</span></p>
+<p class="zw">如果dir2目录已存在，则需要使用<br />
+  cp -r dir1/. dir2<br />
+  如果这时使用cp -r dir1 dir2,则也会将dir1目录复制到dir2中，明显不符合要求。<br />
+  ps:dir1、dir2改成对应的目录路径即可。</p>
+<p class="zw">cp -r /home/www/xxx/statics/. /home/www/statics</p>
+<p>&nbsp;</p>
+<p class="zw">linux下cp整个文件夹的文件到另一个文件夹<br />
+  cp -ri A/B/* A1/B1/ 回车<br />
+  若复制过程中询问是否覆盖，输入y按回车，若不想看到提示直接覆盖使用-rf<br />
+  另外若A A1不在同一目录下，最好填绝对路径，就是/xxx/xxx/A/B/* /xxx/A1/B1/</p>
+<p class="zw">实例：</p>
+<p class="zw">cp -ri /home/server/tomcat/* /home/server/test/</p>
+<p class="zw">cp: target `/home/server/test/' is not a directory<br />
+  需要先创建目标文件夹<br />
+  mkdir /home/server/test</p>
+<p class="zw">&nbsp;</p>
+</body>
+</html>

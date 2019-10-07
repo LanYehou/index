@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PHP安装</title>
+<link rel="stylesheet" href="css/mycss.css">
+</head>
+
+<body class="dbt">
+<div align="center">PHP安装  <span class="zw">CentOS</span> </div>
+<p class="xbt">卸载原有的php</p>
+<p class="zw">yum remove php*</p>
+<p class="zw"><span class="xbt">手动更新rpm</span><br />
+</p>
+<p class="zw">rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm <br />
+  rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm <br />
+</p>
+<p class="zw"><span class="xbt">安装PHP7.2</span><br />
+</p>
+<p class="zw">sudo yum -y install php72w<br />
+</p>
+<p class="zw"><span class="xbt">安装PHP其他库</span><br />
+</p>
+<p class="zw">yum -y install php72w-cli php72w-common php72w-devel php72w-mysql php72w-xml php72w-odbc<br />
+</p>
+<p class="zw"><span class="xbt">检测PHP是否安装成功</span><br />
+  </p>
+<p class="zw">php -v</p>
+</body>
+</html>

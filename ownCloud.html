@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ownCloud</title>
+<link rel="stylesheet" href="css/mycss.css">
+</head>
+
+<body>
+<h2 align="center" class="dbt">安装owncloud</h2>
+<p class="xbt">需要php5.6+；httpd；</p>
+<p class="xbt">添加新的软件源</p>
+<p class="zw">rpm --import https://download.owncloud.org/download/repositories/10.0/CentOS_7/repodata/repomd.xml.key</p>
+<p class="xbt">安装owncloud-files</p>
+<p class="zw">wget http://download.owncloud.org/download/repositories/10.0/CentOS_7/ce:10.0.repo -O /etc/yum.repos.d/ce:10.0.repo</p>
+<p class="zw">yum install owncloud-files</p>
+</body>
+</html>
